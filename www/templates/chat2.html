@@ -1,0 +1,35 @@
+<html ng-app="starter">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+
+    <title>Ionic Frosted Glass</title>
+
+    <link href="//code.ionicframework.com/nightly/css/ionic.css" rel="stylesheet">
+    <link href="//code.ionicframework.com/contrib/ionic-contrib-frosted-glass/ionic.contrib.frostedGlass.css" rel="stylesheet">
+
+    <script src="//code.ionicframework.com/nightly/js/ionic.bundle.js"></script> 
+
+    <script src="//code.ionicframework.com/contrib/ionic-contrib-frosted-glass/ionic.contrib.frostedGlass.js"></script>
+
+  </head>
+  <body>
+
+    <ion-pane ng-controller="PageCtrl">
+      
+      <ion-header-bar frosted-bar class="bar-frosted">
+        <h1 class="title">Blurred!</h1>
+      </ion-header-bar>
+      
+      <ion-content class="padding" start-y="120">
+        <ol class="messages">
+          <li ng-repeat="message in messages" ng-bind-html="message.content"></li>
+        </ol>
+      </ion-content>
+      <ion-footer-bar class="bar-frosted">
+        <button class="button button-clear button-positive" ng-click="add()">Add Message</button>
+      </ion-footer-bar>
+    </ion-pane>
+
+  </body>
+</html>

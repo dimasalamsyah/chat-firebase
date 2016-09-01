@@ -1,0 +1,82 @@
+<ion-view view-title="Chats">
+  <ion-content>
+    
+
+	    <a class="item item-avatar" href="#">
+	      <img src="img/avatar.jpg">
+	      <h2>Venkman</h2>
+	      <p>Back off, man. I'm a scientist.</p>
+	    </a>
+	    <!-- <div id="messagesDiv"></div> -->
+
+	    <!-- <ion-item class="" ng-repeat="message in messages" type="item-text-wrap">
+            <h4>{{message.from}} :</h4>
+            <span am-time-ago="message.createdAt" class="item-note">
+            </span>
+            <p>{{message.content}}</p>
+            <ion-option-button class="button-assertive" ng-click="remove(message)">
+                Delete
+            </ion-option-button>
+        </ion-item> -->
+
+        <!-- <div id='messagesDiv'></div> -->
+<!-- 
+        <div>
+			<ul>
+			  <li ng-repeat="msg in messages">[<em>{{msg.from}}</em>] Msg: a{{msg.timestamps}}</li>
+			</ul>
+		 </div> -->
+
+
+	<ion-item class="" ng-repeat="message in messages | orderBy:'createdAt':true" type="item-text-wrap">
+	    <h4>{{message.from}} :</h4>
+	    <span am-time-ago="chat.createdAt" class="item-note">
+	    </span>
+	    <p>{{message.content}}</p>
+	    <ion-option-button class="button-assertive" ng-click="remove(message)">
+	        Delete
+	    </ion-option-button>
+	</ion-item>
+	    
+
+
+  </ion-content>
+
+  <!-- <div class="bar bar-footer bar-positive" style="position: fixed; bottom: 0px;">
+    <div class="item item-input input-inset">
+      <input type="text" value="hallo">
+      <button class="button button-small">Send</button>
+    </div>    
+  </div> -->
+  
+	  <!-- <div class="bar bar-footer bar-positive item item-input-inset">
+	  	<div class="row">
+		    <label class="item-input-wrapper col col-50" style="margin-right:5px;">
+		      <input type="text" placeholder="Your Name">
+		    </label>
+	 	</div>
+	  </br>
+
+	  	<div class="row">
+		    <label class="item-input-wrapper col col-55">
+		      <input type="text" placeholder="Your Text">
+		    </label>
+		    <button class="button button-small col">
+		      Send
+		    </button>
+	  </div>
+	 </div> -->
+ 	
+ 	<div class="bar bar-footer bar-positive item item-input-inset">
+	 	<label class="item-input-wrapper col col-75">
+	      <!-- <input type="text" placeholder="Your Text" ng-model="IM.textMessage" ng-keydown="addMessage($event)"> -->
+	      <input type="text" ng-model="msg" ng-keydown="addMessage($event)" placeholder="Message...">
+	    </label>
+	    <!-- <button class="button button-small col" ng-click="sendMessage(IM.textMessage)"> -->
+	    <button class="button button-small col" ng-click="sendMsg()">
+	      Send
+	    </button>
+ 	</div> 
+  
+
+</ion-view>

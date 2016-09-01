@@ -1,0 +1,77 @@
+
+<ion-view view-title="Chats-{{User.username}}">
+	<ion-content delegate-handle="mainScroll">
+
+
+	<!-- <ol class="messages">
+        <li ng-repeat="message in messages" ng-bind-html="message.text"></li>
+    </ol> -->
+<div class="bubble-dialog">
+<div ng-repeat="message in messages" class="" on-hold="">
+
+<!-- <ul>
+    <li ng-repeat="message in messages"  >
+    <div style="">
+	 <b>{{message.name}}:</b> {{message.text}}
+    </div>
+    </li>
+</ul> -->
+
+<!-- <ul>
+
+	<div ng-if="User.username !== message.name">
+		<div style="float:left">
+			<b>{{message.name}}:</b> {{message.text}}<br>
+		</div>
+	</div>
+
+	<div ng-if="User.username === message.name">
+		<div style="float:right">
+			<b>{{message.name}}:</b> {{message.text}}<br>
+		</div>
+	</div>
+
+</ul> -->
+	<!-- <div ng-if="message.name !== message.name"> -->
+      	<div class="bubble-right">
+	      	<b ng-bind-html="message.name"></b>
+	      	<div class="message" ng-bind-html="message.text" autolinker></div><br>
+      	</div>
+      
+	<!-- </div> -->
+
+	<!-- <div ng-if="message.name === message.name">
+		 <div style="float:right">
+		    <b><em ng-bind-html="message.name"></em></b><div class="message" ng-bind-html="message.text" autolinker></div>
+		</div>
+	</div> -->
+
+</div>
+</div>
+
+
+
+<!-- <div ng-if="message.name === message.name">
+	 <ul style="float:left">
+	    <li ng-repeat="message in messages"  >
+		 <b>{{message.name}}:</b> {{message.text}}
+	    </li>
+	</ul>
+</div> -->
+
+	</ion-content>
+
+	<div class="bar bar-footer bar-positive item item-input-inset">
+		<label class="item-input-wrapper col">
+	      <input type="text" placeholder="Your Name" ng-model="newmessage.name" ng-keydown="addMessage($event)">
+	    </label>
+        <label class="item-input-wrapper col col-75">
+	      <input type="text" placeholder="Your Text" ng-model="newmessage.text" ng-keydown="addMessage($event)">
+	    </label>
+	    <button class="button button-small col" ng-click="inserisci(newmessage)">
+	      Send
+	    </button>
+    </div>
+
+</ion-view>
+
